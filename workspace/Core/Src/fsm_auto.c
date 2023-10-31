@@ -104,14 +104,14 @@ void auto_run(){
 				break;
 			case FIRST:
 				if(timer_flag[2] == 1){
-					showTimeDelay_First(countdownFirstCoupleLed, countdownSecondCoupleLed);
+//					showTimeDelay_First(countdownFirstCoupleLed, countdownSecondCoupleLed);
 					seg7AutoState = SECOND;
 					setTimer(2, 50);
 				}
 				break;
 			case SECOND:
 				if(timer_flag[2] == 1){
-					showTimeDelay_Second(countdownFirstCoupleLed, countdownSecondCoupleLed);
+//					showTimeDelay_Second(countdownFirstCoupleLed, countdownSecondCoupleLed);
 					seg7AutoState = FIRST;
 					setTimer(2, 50);
 				}
