@@ -9,6 +9,8 @@
 
 
 int buttonsArr[BUTTONS_NUMBER] = {BUTTON1_Pin, BUTTON2_Pin, BUTTON3_Pin};
+//{BUTTON1_GPIO_Port, BUTTON2_GPIO_Port, BUTTON3_GPIO_Port};
+
 
 int KeyReg0[BUTTONS_NUMBER] = {NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
 int KeyReg1[BUTTONS_NUMBER] = {NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
@@ -21,6 +23,7 @@ int button_flag[BUTTONS_NUMBER] = {0,0,0};
 
 int isButtonPressed(int i){
 	if (button_flag[i] == 1){
+		HAL_GPIO_TogglePin(GPIOA, LED1_Pin);
 		button_flag[i] = 0;
 		return 1;
 	}
@@ -36,7 +39,12 @@ void getKeyInput(){
 for(int i=0; i<BUTTONS_NUMBER; i++){
   KeyReg2[i] = KeyReg1[i];
   KeyReg1[i] = KeyReg0[i];
-  KeyReg0[i] = HAL_GPIO_ReadPin(GPIOB, buttonsArr[i]);
+  if(i == 0)
+	  KeyReg0[i] = HAL_GPIO_ReadPin(BUTTON1_GPIO_Port, buttonsArr[i]);
+  else if(i ==1)
+	  KeyReg0[i] = HAL_GPIO_ReadPin(BUTTON2_GPIO_Port, buttonsArr[i]);
+  else
+	  KeyReg0[i] = HAL_GPIO_ReadPin(BUTTON3_GPIO_Port, buttonsArr[i]);
   if ((KeyReg1[i] == KeyReg0[i]) && (KeyReg1[i] == KeyReg2[i])){
     if (KeyReg2[i] != KeyReg3[i]){
       KeyReg3[i] = KeyReg2[i];
