@@ -10,8 +10,12 @@
 void mode2_run(){
 	switch(mode2Toggle){
 		case TOGGLE_INIT:
-			HAL_GPIO_WritePin(GPIOA, RED1_Pin|YELLOW1_Pin|GREEN1_Pin|RED2_Pin
-	                          |YELLOW2_Pin|GREEN2_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin( GREEN1_GPIO_Port , GREEN1_Pin , 0) ;
+			HAL_GPIO_WritePin( YELLOW1_GPIO_Port , YELLOW1_Pin , 0) ;
+			HAL_GPIO_WritePin( RED1_GPIO_Port , RED1_Pin , 0) ;
+			HAL_GPIO_WritePin( GREEN2_GPIO_Port , GREEN2_Pin , 0) ;
+			HAL_GPIO_WritePin( YELLOW2_GPIO_Port , YELLOW2_Pin , 0) ;
+			HAL_GPIO_WritePin( RED2_GPIO_Port , RED2_Pin , 0) ;
 			mode2Toggle = TOGGLE;
 			setTimer(3, 25);
 			break;
@@ -78,8 +82,12 @@ void mode2_run(){
 void mode3_run(){
 	switch(mode3Toggle){
 		case TOGGLE_INIT:
-			HAL_GPIO_WritePin(GPIOA, RED1_Pin|YELLOW1_Pin|GREEN1_Pin|RED2_Pin
-	                          |YELLOW2_Pin|GREEN2_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin( GREEN1_GPIO_Port , GREEN1_Pin , 0) ;
+			HAL_GPIO_WritePin( YELLOW1_GPIO_Port , YELLOW1_Pin , 0) ;
+			HAL_GPIO_WritePin( RED1_GPIO_Port , RED1_Pin , 0) ;
+			HAL_GPIO_WritePin( GREEN2_GPIO_Port , GREEN2_Pin , 0) ;
+			HAL_GPIO_WritePin( YELLOW2_GPIO_Port , YELLOW2_Pin , 0) ;
+			HAL_GPIO_WritePin( RED2_GPIO_Port , RED2_Pin , 0) ;
 			mode3Toggle = TOGGLE;
 			setTimer(5, 25);
 			break;
@@ -145,8 +153,12 @@ void mode3_run(){
 void mode4_run(){
 	switch(mode4Toggle){
 		case TOGGLE_INIT:
-			HAL_GPIO_WritePin(GPIOA, RED1_Pin|YELLOW1_Pin|GREEN1_Pin|RED2_Pin
-	                          |YELLOW2_Pin|GREEN2_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin( GREEN1_GPIO_Port , GREEN1_Pin , 0) ;
+			HAL_GPIO_WritePin( YELLOW1_GPIO_Port , YELLOW1_Pin , 0) ;
+			HAL_GPIO_WritePin( RED1_GPIO_Port , RED1_Pin , 0) ;
+			HAL_GPIO_WritePin( GREEN2_GPIO_Port , GREEN2_Pin , 0) ;
+			HAL_GPIO_WritePin( YELLOW2_GPIO_Port , YELLOW2_Pin , 0) ;
+			HAL_GPIO_WritePin( RED2_GPIO_Port , RED2_Pin , 0) ;
 			mode4Toggle = TOGGLE;
 			setTimer(7, 25);
 			break;

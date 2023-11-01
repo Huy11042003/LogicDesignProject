@@ -59,24 +59,24 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define BUTTON3_Pin GPIO_PIN_13
 #define BUTTON3_GPIO_Port GPIOC
-#define RED1_Pin GPIO_PIN_0
+#define RED1_Pin GPIO_PIN_5
 #define RED1_GPIO_Port GPIOA
-#define YELLOW1_Pin GPIO_PIN_1
+#define YELLOW1_Pin GPIO_PIN_6
 #define YELLOW1_GPIO_Port GPIOA
-#define GREEN2_Pin GPIO_PIN_4
-#define GREEN2_GPIO_Port GPIOA
-#define LED1_Pin GPIO_PIN_5
-#define LED1_GPIO_Port GPIOA
+#define GREEN1_Pin GPIO_PIN_7
+#define GREEN1_GPIO_Port GPIOA
 #define BUTTON1_Pin GPIO_PIN_0
 #define BUTTON1_GPIO_Port GPIOB
 #define BUTTON2_Pin GPIO_PIN_7
 #define BUTTON2_GPIO_Port GPIOC
-#define GREEN1_Pin GPIO_PIN_10
-#define GREEN1_GPIO_Port GPIOA
-#define RED2_Pin GPIO_PIN_11
-#define RED2_GPIO_Port GPIOA
-#define YELLOW2_Pin GPIO_PIN_12
-#define YELLOW2_GPIO_Port GPIOA
+#define RED2_Pin GPIO_PIN_9
+#define RED2_GPIO_Port GPIOC
+#define LED1_Pin GPIO_PIN_3
+#define LED1_GPIO_Port GPIOB
+#define YELLOW2_Pin GPIO_PIN_8
+#define YELLOW2_GPIO_Port GPIOB
+#define GREEN2_Pin GPIO_PIN_9
+#define GREEN2_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
