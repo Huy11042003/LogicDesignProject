@@ -14,106 +14,28 @@ void auto_run(){
 		MODE = MODE2;
 	}
 	if(MODE == MODE1){
-		switch(firstCoupleLedAutoState){
+		switch(autoState){
 			case LED_INIT:
-				firstCoupleLedAutoState = RED;
-				setTimer(0, 100);
+				autoState = LED;
+				setTimer(0, 1000);
 				break;
-			case RED:
-				displayFirstLedCouple(RED);
+			case LED:
+				displayLed(hour);
+				displayLed(minute);
+				displayLed(second);
 				if(timer_flag[0] == 1){
-					countdownFirstCoupleLed--;
-					if(countdownFirstCoupleLed == 0){
-						countdownFirstCoupleLed = greenDelay;
-						firstCoupleLedAutoState = GREEN;
+					second++;
+					if(second >= 60){
+						minute++;
+						second = 0;
 					}
-					setTimer(0, 100);
-				}
-				break;
-			case GREEN:
-				displayFirstLedCouple(GREEN);
-				if(timer_flag[0] == 1){
-					countdownFirstCoupleLed--;
-					if(countdownFirstCoupleLed == 0){
-						countdownFirstCoupleLed = yellowDelay;
-						firstCoupleLedAutoState = YELLOW;
+					if(minute >= 60){
+						hour++;
+						minute = 0;
 					}
-					setTimer(0, 100);
-				}
-				break;
-			case YELLOW:
-				displayFirstLedCouple(YELLOW);
-				if(timer_flag[0] == 1){
-					countdownFirstCoupleLed--;
-					if(countdownFirstCoupleLed == 0){
-						countdownFirstCoupleLed = redDelay;
-						firstCoupleLedAutoState = RED;
-					}
-					setTimer(0, 100);
-				}
-				break;
-			default:
-				break;
-		}
-		switch(secondCoupleLedAutoState){
-			case LED_INIT:
-				secondCoupleLedAutoState = GREEN;
-				setTimer(1, 100);
-				break;
-			case RED:
-				displaySecondLedCouple(RED);
-				if(timer_flag[1] == 1){
-					countdownSecondCoupleLed--;
-					if(countdownSecondCoupleLed == 0){
-						countdownSecondCoupleLed = greenDelay;
-						secondCoupleLedAutoState = GREEN;
-					}
-					setTimer(1, 100);
-				}
-				break;
-			case GREEN:
-				displaySecondLedCouple(GREEN);
-				if(timer_flag[1] == 1){
-					countdownSecondCoupleLed--;
-					if(countdownSecondCoupleLed == 0){
-						countdownSecondCoupleLed = yellowDelay;
-						secondCoupleLedAutoState = YELLOW;
-					}
-					setTimer(1, 100);
-				}
-				break;
-			case YELLOW:
-				displaySecondLedCouple(YELLOW);
-				if(timer_flag[1] == 1){
-					countdownSecondCoupleLed--;
-					if(countdownSecondCoupleLed == 0){
-						countdownSecondCoupleLed = redDelay;
-						secondCoupleLedAutoState = RED;
-					}
-					setTimer(1, 100);
-				}
-				break;
-			default:
-				break;
-		}
-
-		switch(seg7AutoState){
-			case SEG_INIT:
-				seg7AutoState = FIRST;
-				setTimer(2, 1);
-				break;
-			case FIRST:
-				if(timer_flag[2] == 1){
-//					showTimeDelay_First(countdownFirstCoupleLed, countdownSecondCoupleLed);
-					seg7AutoState = SECOND;
-					setTimer(2, 50);
-				}
-				break;
-			case SECOND:
-				if(timer_flag[2] == 1){
-//					showTimeDelay_Second(countdownFirstCoupleLed, countdownSecondCoupleLed);
-					seg7AutoState = FIRST;
-					setTimer(2, 50);
+					if(hour >= 12)
+						hour = 0;
+					setTimer(0, 1000);
 				}
 				break;
 			default:

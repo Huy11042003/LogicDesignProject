@@ -1,3 +1,2 @@
-../Core/Src/display_led.c:10:6:displayFirstLedCouple	5
-../Core/Src/display_led.c:39:6:displaySecondLedCouple	5
-../Core/Src/display_led.c:66:6:toggleLeds	5
+../Core/Src/display_led.c:10:6:displayLed	1
+../Core/Src/display_led.c:19:6:toggleLeds	1

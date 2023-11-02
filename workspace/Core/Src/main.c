@@ -96,7 +96,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
   setValues();
-  displayFirstLedCouple(LED_INIT);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -120,7 +119,7 @@ int main(void)
 //	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_9); //LED2
 //	  HAL_Delay(1000);
 	  auto_run();
-	  manual_run();
+//	  manual_run();
 
   }
   /* USER CODE END 3 */
