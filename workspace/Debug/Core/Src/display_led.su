@@ -1,2 +1,2 @@
 ../Core/Src/display_led.c:10:6:displayLed	16	static
-../Core/Src/display_led.c:19:6:toggleLeds	16	static
+../Core/Src/display_led.c:68:6:toggleLeds	16	static
