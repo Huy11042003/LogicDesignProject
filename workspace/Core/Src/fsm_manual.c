@@ -8,6 +8,7 @@
 #include "fsm_manual.h"
 
 void mode2_run(){
+	displaySEG7(redDelay);
 	switch(mode2Toggle){
 		case TOGGLE_INIT:
 			HAL_GPIO_WritePin( GREEN1_GPIO_Port , GREEN1_Pin , 0) ;
@@ -43,7 +44,7 @@ void mode2_run(){
 					redDelay +=1;
 					greenDelay +=1;
 
-					if(redDelay >= 99) redDelay = 1;
+					if(redDelay > 9) redDelay = 1;
 				}
 				if (isButtonPressed(2)==1){
 					MODE = MODE1;
@@ -54,32 +55,10 @@ void mode2_run(){
 			default:
 				break;
 		}
-
-	switch(mode2Seg){
-		case SEG_INIT:
-			mode2Seg = FIRST;
-			setTimer(4, 25);
-			break;
-		case FIRST:
-			if(timer_flag[4] == 1){
-//				showTimeDelay1(redDelay);
-				mode2Seg = SECOND;
-				setTimer(4, 25);
-			}
-			break;
-		case SECOND:
-			if(timer_flag[4] == 1){
-//				showTimeDelay2(redDelay);
-				setTimer(4, 25);
-				mode2Seg = FIRST;
-			}
-			break;
-		default:
-			break;
-	}
 }
 
 void mode3_run(){
+	displaySEG7(yellowDelay);
 	switch(mode3Toggle){
 		case TOGGLE_INIT:
 			HAL_GPIO_WritePin( GREEN1_GPIO_Port , GREEN1_Pin , 0) ;
@@ -114,7 +93,7 @@ void mode3_run(){
 				if (isButtonPressed(1)==1){
 					yellowDelay +=1;
 					redDelay +=1;
-					if(yellowDelay >= 99) yellowDelay = 1;
+					if(yellowDelay > 9) yellowDelay = 1;
 				}
 				if (isButtonPressed(2)==1){
 					MODE = MODE1;
@@ -125,32 +104,10 @@ void mode3_run(){
 			default:
 				break;
 		}
-
-	switch(mode3Seg){
-		case SEG_INIT:
-			mode3Seg = FIRST;
-			setTimer(6, 25);
-			break;
-		case FIRST:
-			if(timer_flag[6] == 1){
-//				showTimeDelay1(yellowDelay);
-				mode3Seg = SECOND;
-				setTimer(6, 25);
-			}
-			break;
-		case SECOND:
-			if(timer_flag[6] == 1){
-//				showTimeDelay2(yellowDelay);
-				setTimer(6, 25);
-				mode3Seg = FIRST;
-			}
-			break;
-		default:
-			break;
-	}
 }
 
 void mode4_run(){
+	displaySEG7(greenDelay);
 	switch(mode4Toggle){
 		case TOGGLE_INIT:
 			HAL_GPIO_WritePin( GREEN1_GPIO_Port , GREEN1_Pin , 0) ;
@@ -185,7 +142,7 @@ void mode4_run(){
 				if (isButtonPressed(1)==1){
 					greenDelay +=1;
 					redDelay +=1;
-					if(greenDelay >= 99) greenDelay = 1;
+					if(greenDelay > 9) greenDelay = 1;
 				}
 				if (isButtonPressed(2)==1){
 					MODE = MODE1;
@@ -196,29 +153,6 @@ void mode4_run(){
 			default:
 				break;
 		}
-
-	switch(mode4Seg){
-		case SEG_INIT:
-			mode4Seg = FIRST;
-			setTimer(8, 25);
-			break;
-		case FIRST:
-			if(timer_flag[8] == 1){
-//				showTimeDelay1(greenDelay);
-				mode4Seg = SECOND;
-				setTimer(8, 25);
-			}
-			break;
-		case SECOND:
-			if(timer_flag[8] == 1){
-//				showTimeDelay2(greenDelay);
-				setTimer(8, 25);
-				mode4Seg = FIRST;
-			}
-			break;
-		default:
-			break;
-	}
 }
 
 void manual_run(){

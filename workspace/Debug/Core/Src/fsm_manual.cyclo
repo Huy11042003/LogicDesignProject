@@ -1,4 +1,4 @@
-../Core/Src/fsm_manual.c:10:6:mode2_run	16
-../Core/Src/fsm_manual.c:82:6:mode3_run	16
-../Core/Src/fsm_manual.c:153:6:mode4_run	16
-../Core/Src/fsm_manual.c:224:6:manual_run	8
+../Core/Src/fsm_manual.c:10:6:mode2_run	10
+../Core/Src/fsm_manual.c:60:6:mode3_run	10
+../Core/Src/fsm_manual.c:109:6:mode4_run	10
+../Core/Src/fsm_manual.c:158:6:manual_run	8

@@ -17,12 +17,15 @@ void auto_run(){
 		switch(firstCoupleLedAutoState){
 			case LED_INIT:
 				firstCoupleLedAutoState = RED;
+				displaySEG7(countdownFirstCoupleLed);
 				setTimer(0, 100);
 				break;
 			case RED:
 				displayFirstLedCouple(RED);
+				displaySEG7(countdownFirstCoupleLed);
 				if(timer_flag[0] == 1){
 					countdownFirstCoupleLed--;
+					displaySEG7(countdownFirstCoupleLed);
 					if(countdownFirstCoupleLed == 0){
 						countdownFirstCoupleLed = greenDelay;
 						firstCoupleLedAutoState = GREEN;
@@ -62,8 +65,10 @@ void auto_run(){
 				break;
 			case RED:
 				displaySecondLedCouple(RED);
+				displaySEG7(countdownSecondCoupleLed);
 				if(timer_flag[1] == 1){
 					countdownSecondCoupleLed--;
+					displaySEG7(countdownSecondCoupleLed);
 					if(countdownSecondCoupleLed == 0){
 						countdownSecondCoupleLed = greenDelay;
 						secondCoupleLedAutoState = GREEN;
@@ -97,27 +102,27 @@ void auto_run(){
 				break;
 		}
 
-		switch(seg7AutoState){
-			case SEG_INIT:
-				seg7AutoState = FIRST;
-				setTimer(2, 1);
-				break;
-			case FIRST:
-				if(timer_flag[2] == 1){
+//		switch(seg7AutoState){
+//			case SEG_INIT:
+//				seg7AutoState = FIRST;
+//				setTimer(2, 1);
+//				break;
+//			case FIRST:
+//				if(timer_flag[2] == 1){
 //					showTimeDelay_First(countdownFirstCoupleLed, countdownSecondCoupleLed);
-					seg7AutoState = SECOND;
-					setTimer(2, 50);
-				}
-				break;
-			case SECOND:
-				if(timer_flag[2] == 1){
-//					showTimeDelay_Second(countdownFirstCoupleLed, countdownSecondCoupleLed);
-					seg7AutoState = FIRST;
-					setTimer(2, 50);
-				}
-				break;
-			default:
-				break;
-		}
+//					seg7AutoState = SECOND;
+//					setTimer(2, 50);
+//				}
+//				break;
+//			case SECOND:
+//				if(timer_flag[2] == 1){
+////					showTimeDelay_Second(countdownFirstCoupleLed, countdownSecondCoupleLed);
+//					seg7AutoState = FIRST;
+//					setTimer(2, 50);
+//				}
+//				break;
+//			default:
+//				break;
+//		}
 	}
 }

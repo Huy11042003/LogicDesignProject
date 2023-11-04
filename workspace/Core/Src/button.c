@@ -23,7 +23,7 @@ int button_flag[BUTTONS_NUMBER] = {0,0,0};
 
 int isButtonPressed(int i){
 	if (button_flag[i] == 1){
-		HAL_GPIO_TogglePin(GPIOA, LED1_Pin);
+//		HAL_GPIO_TogglePin(GPIOA, LED1_Pin);
 		button_flag[i] = 0;
 		return 1;
 	}
