@@ -9,7 +9,7 @@
 
 void displayLed(int num){
 	switch(num){
-	case 0:
+	case 12:
 		HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, 0);
 		HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 0);
 		HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, 0);
@@ -21,7 +21,7 @@ void displayLed(int num){
 		HAL_GPIO_WritePin(LED9_GPIO_Port, LED9_Pin, 0);
 		HAL_GPIO_WritePin(LED10_GPIO_Port, LED10_Pin, 0);
 		HAL_GPIO_WritePin(LED11_GPIO_Port, LED11_Pin, 0);
-		HAL_GPIO_WritePin(LED12_GPIO_Port, LED12_Pin, 0);
+		HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, 0);
 		break;
 	case 1:
 		HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, 1);
@@ -56,8 +56,8 @@ void displayLed(int num){
 	case 11:
 		HAL_GPIO_WritePin(LED11_GPIO_Port, LED11_Pin, 1);
 		break;
-	case 12:
-		HAL_GPIO_WritePin(LED12_GPIO_Port, LED12_Pin, 1);
+	case 0:
+		HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, 1);
 		break;
 	 default:
 		 break;

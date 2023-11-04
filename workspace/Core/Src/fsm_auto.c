@@ -17,25 +17,29 @@ void auto_run(){
 		switch(autoState){
 			case LED_INIT:
 				autoState = LED;
+				displayLed(12);
+				displayLed(hour%12);
+				displayLed(minute/5);
+				displayLed(second/5);
 				setTimer(0, 100);
 				break;
 			case LED:
-				displayLed(0);
-				displayLed(hour%12+1);
-				displayLed(minute/5 +1);
-				displayLed(second/5 +1);
 				if(timer_flag[0] == 1){
-					second++;
-					if(second >= 60){
+					if(second > 59){
 						minute++;
 						second = 0;
 					}
-					if(minute >= 60){
+					if(minute > 59){
 						hour++;
 						minute = 0;
 					}
 					if(hour >= 12)
 						hour = 0;
+					displayLed(12);
+					displayLed(hour%12);
+					displayLed(minute/5);
+					displayLed(second/5);
+					second++;
 					setTimer(0, 100);
 				}
 				break;

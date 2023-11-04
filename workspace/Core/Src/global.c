@@ -36,7 +36,7 @@ void setValues(void){
 	mode4Toggle = TOGGLE_INIT;
 	mode4Increase = INCREASE_INIT;
 
-	hour = 0;
-	minute = 0;
-	second = 0;
+	hour = 5;
+	minute = 39;
+	second = 30;
 }
