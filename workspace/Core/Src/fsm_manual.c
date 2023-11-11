@@ -12,7 +12,7 @@ void manual_run(){
 		case MODE2:
 			if(timer_flag[3] == 1){
 				toggleLeds(RED);
-//				showTimeDelay(redDelay);
+				displaySEG7(redDelay-1);
 				setTimer(3, 25);
 			}
 			if (isButtonPressed(1)==1){
@@ -28,15 +28,15 @@ void manual_run(){
 			if (isButtonPressed(0) == 1){
 				setTimer(3, 25);
 				MODE = MODE3;
-				HAL_GPIO_WritePin(GPIOA, RED1_Pin|YELLOW1_Pin|GREEN1_Pin|RED2_Pin
-										                          |YELLOW2_Pin|GREEN2_Pin, GPIO_PIN_SET);
+				displayFirstLedCouple(LED_INIT);
+				displaySecondLedCouple(LED_INIT);
 			}
 
 			break;
 		case MODE3:
 			if(timer_flag[3] == 1){
 				toggleLeds(YELLOW);
-//				showTimeDelay(yellowDelay);
+				displaySEG7(yellowDelay-1);
 				setTimer(3, 25);
 			}
 			if (isButtonPressed(1)==1){
@@ -52,14 +52,14 @@ void manual_run(){
 			if (isButtonPressed(0) == 1){
 				MODE = MODE4;
 				setTimer(3, 25);
-				HAL_GPIO_WritePin(GPIOA, RED1_Pin|YELLOW1_Pin|GREEN1_Pin|RED2_Pin
-										                          |YELLOW2_Pin|GREEN2_Pin, GPIO_PIN_SET);
+				displayFirstLedCouple(LED_INIT);
+				displaySecondLedCouple(LED_INIT);
 			}
 			break;
 		case MODE4:
 			if(timer_flag[3] == 1){
 				toggleLeds(GREEN);
-//				showTimeDelay(greenDelay);
+				displaySEG7(greenDelay-1);
 				setTimer(3, 25);
 			}
 			if (isButtonPressed(1)==1){
@@ -74,8 +74,9 @@ void manual_run(){
 			}
 			if (isButtonPressed(0) == 1){
 				MODE = MODE1;
-				HAL_GPIO_WritePin(GPIOA, RED1_Pin|YELLOW1_Pin|GREEN1_Pin|RED2_Pin
-										                          |YELLOW2_Pin|GREEN2_Pin, GPIO_PIN_SET);
+				setValues();
+				displayFirstLedCouple(LED_INIT);
+				displaySecondLedCouple(LED_INIT);
 			}
 			break;
 		default:

@@ -16,14 +16,15 @@ void auto_run(){
 					break;
 				case RED_GREEN:
 					if (isButtonPressed(0) == 1 ){
-//						MODE = MODE2;
-						HAL_GPIO_WritePin(GPIOA, RED1_Pin|YELLOW1_Pin|GREEN1_Pin|RED2_Pin
-							                          |YELLOW2_Pin|GREEN2_Pin, GPIO_PIN_SET);
+						MODE = MODE2;
+						displayFirstLedCouple(LED_INIT);
+						displaySecondLedCouple(LED_INIT);
 						setTimer(3, 25);
 						break;
 					}
 					displayFirstLedCouple(RED);
 					displaySecondLedCouple(GREEN);
+					displaySEG7(countdownFirstCoupleLed-1);
 					if(timer_flag[0] == 1){
 						countdownFirstCoupleLed--;
 						countdownSecondCoupleLed--;
@@ -36,11 +37,15 @@ void auto_run(){
 					break;
 				case RED_YELLOW:
 					if (isButtonPressed(0) == 1 ){
-//						MODE = MODE2;
+						MODE = MODE2;
+						displayFirstLedCouple(LED_INIT);
+						displaySecondLedCouple(LED_INIT);
+						setTimer(3, 25);
 						break;
 					}
 					displayFirstLedCouple(RED);
 					displaySecondLedCouple(YELLOW);
+					displaySEG7(countdownFirstCoupleLed-1);
 					if(timer_flag[0] == 1){
 						countdownFirstCoupleLed--;
 						countdownSecondCoupleLed--;
@@ -54,11 +59,15 @@ void auto_run(){
 					break;
 				case GREEN_RED:
 					if (isButtonPressed(0) == 1 ){
-//						MODE = MODE2;
+						MODE = MODE2;
+						displayFirstLedCouple(LED_INIT);
+						displaySecondLedCouple(LED_INIT);
+						setTimer(3, 25);
 						break;
 					}
 					displayFirstLedCouple(GREEN);
 					displaySecondLedCouple(RED);
+					displaySEG7(countdownFirstCoupleLed-1);
 					if(timer_flag[0] == 1){
 						countdownFirstCoupleLed--;
 						countdownSecondCoupleLed--;
@@ -71,11 +80,15 @@ void auto_run(){
 					break;
 				case YELLOW_RED:
 					if (isButtonPressed(0) == 1 ){
-//						MODE = MODE2;
+						MODE = MODE2;
+						displayFirstLedCouple(LED_INIT);
+						displaySecondLedCouple(LED_INIT);
+						setTimer(3, 25);
 						break;
 					}
-					displayFirstLedCouple(RED);
-					displaySecondLedCouple(GREEN);
+					displayFirstLedCouple(YELLOW);
+					displaySecondLedCouple(RED);
+					displaySEG7(countdownFirstCoupleLed-1);
 					if(timer_flag[0] == 1){
 						countdownFirstCoupleLed--;
 						countdownSecondCoupleLed--;
@@ -88,28 +101,5 @@ void auto_run(){
 					}
 					break;
 			}
-
-//		switch(seg7AutoState){
-//			case SEG_INIT:
-//				seg7AutoState = FIRST;
-//				setTimer(2, 1);
-//				break;
-//			case FIRST:
-//				if(timer_flag[2] == 1){
-//					showTimeDelay_First(countdownFirstCoupleLed, countdownSecondCoupleLed);
-//					seg7AutoState = SECOND;
-//					setTimer(2, 50);
-//				}
-//				break;
-//			case SECOND:
-//				if(timer_flag[2] == 1){
-////					showTimeDelay_Second(countdownFirstCoupleLed, countdownSecondCoupleLed);
-//					seg7AutoState = FIRST;
-//					setTimer(2, 50);
-//				}
-//				break;
-//			default:
-//				break;
-//		}
 	}
 }

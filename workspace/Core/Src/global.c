@@ -11,11 +11,10 @@ enum AutoState autostate;
 
 enum LedState firstCoupleLedAutoState;
 enum LedState secondCoupleLedAutoState;
-enum SegState seg7AutoState;
 
-int redDelay = 5;
-int greenDelay = 3;
-int yellowDelay = 2;
+int redDelay = 7;
+int greenDelay = 4;
+int yellowDelay = 3;
 
 
 int countdownFirstCoupleLed;
@@ -25,10 +24,8 @@ void setValues(void){
 	MODE = MODE1;
 	autostate = AUTO_INIT;
 
-
 	firstCoupleLedAutoState = LED_INIT;
 	secondCoupleLedAutoState = LED_INIT;
-	seg7AutoState = SEG_INIT;
 
 	countdownFirstCoupleLed = redDelay;
 	countdownSecondCoupleLed = greenDelay;

@@ -59,8 +59,6 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define BUTTON3_Pin GPIO_PIN_13
 #define BUTTON3_GPIO_Port GPIOC
-#define YELLOW2_Pin GPIO_PIN_0
-#define YELLOW2_GPIO_Port GPIOC
 #define RED1_Pin GPIO_PIN_0
 #define RED1_GPIO_Port GPIOA
 #define YELLOW1_Pin GPIO_PIN_1
@@ -71,18 +69,18 @@ void Error_Handler(void);
 #define A1_GPIO_Port GPIOA
 #define GREEN1_Pin GPIO_PIN_4
 #define GREEN1_GPIO_Port GPIOA
-#define LED0_Pin GPIO_PIN_5
-#define LED0_GPIO_Port GPIOA
-#define LED11_Pin GPIO_PIN_6
-#define LED11_GPIO_Port GPIOA
-#define LED10_Pin GPIO_PIN_7
-#define LED10_GPIO_Port GPIOA
-#define BUTTON2_Pin GPIO_PIN_0
-#define BUTTON2_GPIO_Port GPIOB
+#define RED2_Pin GPIO_PIN_5
+#define RED2_GPIO_Port GPIOA
+#define YELLOW2_Pin GPIO_PIN_6
+#define YELLOW2_GPIO_Port GPIOA
+#define GREEN2_Pin GPIO_PIN_7
+#define GREEN2_GPIO_Port GPIOA
+#define BUTTON1_Pin GPIO_PIN_0
+#define BUTTON1_GPIO_Port GPIOB
 #define E1_Pin GPIO_PIN_10
 #define E1_GPIO_Port GPIOB
-#define BUTTON1_Pin GPIO_PIN_7
-#define BUTTON1_GPIO_Port GPIOC
+#define BUTTON2_Pin GPIO_PIN_7
+#define BUTTON2_GPIO_Port GPIOC
 #define F1_Pin GPIO_PIN_8
 #define F1_GPIO_Port GPIOA
 #define G1_Pin GPIO_PIN_9
@@ -93,10 +91,6 @@ void Error_Handler(void);
 #define D1_GPIO_Port GPIOB
 #define LED9_Pin GPIO_PIN_6
 #define LED9_GPIO_Port GPIOB
-#define RED2_Pin GPIO_PIN_8
-#define RED2_GPIO_Port GPIOB
-#define GREEN2_Pin GPIO_PIN_9
-#define GREEN2_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
