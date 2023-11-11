@@ -66,8 +66,8 @@ void displayLed(int num){
 
 
 void toggleLeds(int num){
-	switch(num){
 	displayLed(12);
+	switch(num){
 		case 1:
 			HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
 			break;

@@ -18,9 +18,9 @@ enum LedToggleState mode4Toggle;
 enum IncreaseDelayState mode4Increase;
 
 enum AutoState autoState;
-int hour;
-int minute;
-int second;
+int hour = 5;
+int minute = 39;
+int second = 50;
 
 void setValues(void){
 	MODE = MODE1;
@@ -36,7 +36,4 @@ void setValues(void){
 	mode4Toggle = TOGGLE_INIT;
 	mode4Increase = INCREASE_INIT;
 
-	hour = 5;
-	minute = 39;
-	second = 30;
 }

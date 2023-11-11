@@ -10,6 +10,8 @@
 void auto_run(){
 	if (isButtonPressed(0) == 1 ){
 		MODE = MODE2;
+		displayLed(12);
+		setTimer(3, 25);
 	}
 	if(MODE == MODE1){
 		switch(autoState){
