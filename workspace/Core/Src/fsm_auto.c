@@ -8,11 +8,9 @@
 
 
 void auto_run(){
-//	if (isButtonPressed(0) == 1 ){
-////		HAL_GPIO_WritePin(GPIOA, EN0_Pin|EN1_Pin|EN2_Pin|EN3_Pin
-////		                          |EN4_Pin|EN5_Pin, GPIO_PIN_SET);
-//		MODE = MODE2;
-//	}
+	if (isButtonPressed(0) == 1 ){
+		MODE = MODE2;
+	}
 	if(MODE == MODE1){
 		switch(autoState){
 			case LED_INIT:
