@@ -228,11 +228,11 @@ static void MX_GPIO_Init(void)
                           |YELLOW2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, B1_Pin|A1_Pin|F1_Pin|G1_Pin
+  HAL_GPIO_WritePin(GPIOA, D1_Pin|E1_Pin|A1_Pin|B1_Pin
                           |C1_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, E1_Pin|D1_Pin|LED9_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOB, F1_Pin|G1_Pin|LED9_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pins : BUTTON3_Pin BUTTON2_Pin */
   GPIO_InitStruct.Pin = BUTTON3_Pin|BUTTON2_Pin;
@@ -240,12 +240,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : RED1_Pin YELLOW1_Pin B1_Pin A1_Pin
-                           GREEN1_Pin RED2_Pin YELLOW2_Pin F1_Pin
-                           G1_Pin C1_Pin */
-  GPIO_InitStruct.Pin = RED1_Pin|YELLOW1_Pin|B1_Pin|A1_Pin
-                          |GREEN1_Pin|RED2_Pin|YELLOW2_Pin|F1_Pin
-                          |G1_Pin|C1_Pin;
+  /*Configure GPIO pins : RED1_Pin YELLOW1_Pin D1_Pin E1_Pin
+                           GREEN1_Pin RED2_Pin YELLOW2_Pin A1_Pin
+                           B1_Pin C1_Pin */
+  GPIO_InitStruct.Pin = RED1_Pin|YELLOW1_Pin|D1_Pin|E1_Pin
+                          |GREEN1_Pin|RED2_Pin|YELLOW2_Pin|A1_Pin
+                          |B1_Pin|C1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -263,8 +263,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(BUTTON1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : E1_Pin D1_Pin LED9_Pin */
-  GPIO_InitStruct.Pin = E1_Pin|D1_Pin|LED9_Pin;
+  /*Configure GPIO pins : F1_Pin G1_Pin LED9_Pin */
+  GPIO_InitStruct.Pin = F1_Pin|G1_Pin|LED9_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
