@@ -12,11 +12,12 @@
 void manual_run(){
 	switch(MODE){
 		case MODE2:
-			if(timer_flag[3] == 1){
-				toggleLeds(second/60);
-				setTimer(3, 25);
+			if(timer_flag[1] == 1){
+				toggleLeds(second/5);
+				setTimer(1, 50);
 			}
 			if (isButtonPressed(1)==1){
+				displayLed(12);
 				second++;
 				if(second > 59){
 					minute++;
@@ -35,17 +36,19 @@ void manual_run(){
 				setValues();
 			}
 			if (isButtonPressed(0) == 1){
-				setTimer(3, 25);
+				setTimer(3, 50);
+				displayLed(12);
 				MODE = MODE3;
 			}
 
 			break;
 		case MODE3:
-			if(timer_flag[3] == 1){
-				toggleLeds(minute/60);
-				setTimer(3, 25);
+			if(timer_flag[1] == 1){
+				toggleLeds(minute/5);
+				setTimer(1, 50);
 			}
 			if (isButtonPressed(1)==1){
+				displayLed(12);
 				minute++;
 				if(minute > 59){
 					hour++;
@@ -60,14 +63,17 @@ void manual_run(){
 			}
 			if (isButtonPressed(0) == 1){
 				MODE = MODE4;
-				setTimer(3, 25);
+				displayLed(12);
+				setTimer(3, 50);
 			}
 			break;
 		case MODE4:
-			if(timer_flag[3] == 1){
-				setTimer(3, 25);
+			if(timer_flag[1] == 1){
+				toggleLeds(hour%12);
+				setTimer(1, 50);
 			}
 			if (isButtonPressed(1)==1){
+				displayLed(12);
 				hour++;
 				if(hour >= 12)
 					hour = 0;
@@ -79,6 +85,7 @@ void manual_run(){
 			}
 			if (isButtonPressed(0) == 1){
 				MODE = MODE1;
+				displayLed(12);
 				setValues();
 			}
 			break;

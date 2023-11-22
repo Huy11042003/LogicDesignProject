@@ -96,6 +96,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
   setValues();
+  setTimer(0, 100);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -117,9 +118,10 @@ int main(void)
 //	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_0); //I2C
 //	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7); //D9-D10
 //	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_9); //LED2
-//	  HAL_Delay(1000);
+//	  HAL_Delay(1000)
+//	  displayLed(12);
 	  auto_run();
-//	  manual_run();
+	  manual_run();
 
   }
   /* USER CODE END 3 */
@@ -223,17 +225,15 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED10_Pin|LED9_Pin|LED6_Pin|LED8_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED7_Pin|LED11_Pin|LED0_Pin|LED1_Pin
+  HAL_GPIO_WritePin(GPIOA, LED10_Pin|LED9_Pin|LED6_Pin|LED7_Pin
+                          |LED8_Pin|LED11_Pin|LED0_Pin|LED1_Pin
                           |LED4_Pin|LED5_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pins : BUTTON3_Pin BUTTON2_Pin */
   GPIO_InitStruct.Pin = BUTTON3_Pin|BUTTON2_Pin;
@@ -278,16 +278,16 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-//	getKeyInput();
+	getKeyInput();
 	timerRun(0);
 	timerRun(1);
-	timerRun(2);
-	timerRun(3);
-	timerRun(4);
-	timerRun(5);
-	timerRun(6);
-	timerRun(7);
-	timerRun(8);
+//	timerRun(2);
+//	timerRun(3);
+//	timerRun(4);
+//	timerRun(5);
+//	timerRun(6);
+//	timerRun(7);
+//	timerRun(8);
 }
 /* USER CODE END 4 */
 

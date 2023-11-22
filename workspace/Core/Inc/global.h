@@ -14,7 +14,7 @@
 
 
 enum ModeState {MODE1 = 1, MODE2 = 2, MODE3 = 3, MODE4 = 4};
-enum AutoState {LED_INIT, LED};
+//enum AutoState {LED_INIT, LED};
 enum LedToggleState {TOGGLE_INIT, TOGGLE};
 enum IncreaseDelayState {INCREASE_INIT, INCREASE};
 
