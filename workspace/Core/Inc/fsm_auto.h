@@ -14,7 +14,6 @@
 #include "button.h"
 
 
-
 void auto_run();
 
 #endif /* INC_FSM_AUTO_H_ */

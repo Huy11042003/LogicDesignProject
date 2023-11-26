@@ -7,27 +7,17 @@
 #include "global.h"
 
 enum ModeState MODE;
-enum AutoState autostate;
-
-enum LedState firstCoupleLedAutoState;
-enum LedState secondCoupleLedAutoState;
-
-int redDelay = 7;
-int greenDelay = 4;
-int yellowDelay = 3;
-
+enum DisplayState STATE;
 
 int countdownFirstCoupleLed;
 int countdownSecondCoupleLed;
 
+int hour = 5;
+int minute = 39;
+int second = 50;
+
 void setValues(void){
 	MODE = MODE1;
-	autostate = AUTO_INIT;
-
-	firstCoupleLedAutoState = LED_INIT;
-	secondCoupleLedAutoState = LED_INIT;
-
-	countdownFirstCoupleLed = redDelay;
-	countdownSecondCoupleLed = greenDelay;
+	STATE = STATE1;
 }
 

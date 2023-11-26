@@ -12,13 +12,12 @@
 #include "global.h"
 
 
-void displayFirstLedCouple(enum LedState state_1);
-
-void displaySecondLedCouple(enum LedState state_2);
-
-void toggleLeds(enum LedState state);
-
 void displaySEG7(int num);
 
+void enable(int num);
+
+void display_fsm();
+
+void displayOnly_fsm(int num);
 
 #endif /* INC_DISPLAY_LED_H_ */

@@ -10,73 +10,90 @@
 void manual_run(){
 	switch(MODE){
 		case MODE2:
-			if(timer_flag[3] == 1){
-				toggleLeds(RED);
-				displaySEG7(redDelay-1);
-				setTimer(3, 25);
+			if(timer_flag[2] == 1){
+				displayOnly_fsm(second);
+				setTimer(2, 25);
 			}
 			if (isButtonPressed(1)==1){
-				redDelay +=1;
-				greenDelay +=1;
-
-				if(redDelay >= 99) redDelay = 1;
+				second++;
+				if(second > 59){
+					minute++;
+					second = 0;
+				}
+				if(minute > 59){
+					hour++;
+					minute = 0;
+				}
+				if(hour >= 24)
+					hour = 0;
 			}
 			if (isButtonPressed(2)==1){
-				MODE = MODE1;
-				setValues();
+				second--;
+				if(second < 0){
+					minute--;
+					second = 59;
+				}
+				if(minute < 0){
+					hour--;
+					minute = 59;
+				}
+				if(hour < 0)
+					hour = 23;
 			}
 			if (isButtonPressed(0) == 1){
-				setTimer(3, 25);
 				MODE = MODE3;
-				displayFirstLedCouple(LED_INIT);
-				displaySecondLedCouple(LED_INIT);
+				STATE = STATE1;
 			}
 
 			break;
 		case MODE3:
-			if(timer_flag[3] == 1){
-				toggleLeds(YELLOW);
-				displaySEG7(yellowDelay-1);
-				setTimer(3, 25);
+			if(timer_flag[2] == 1){
+				displayOnly_fsm(minute);
+				setTimer(2, 25);
 			}
 			if (isButtonPressed(1)==1){
-				yellowDelay +=1;
-				redDelay+=1;
-
-				if(yellowDelay >= 99) yellowDelay = 1;
+				minute++;
+				if(minute > 59){
+					hour++;
+					minute = 0;
+				}
+				if(hour >= 24)
+					hour = 0;
 			}
 			if (isButtonPressed(2)==1){
-				MODE = MODE1;
-				setValues();
+				minute--;
+				if(minute < 0){
+					hour--;
+					minute = 59;
+				}
+				if(hour < 0)
+					hour = 23;
 			}
 			if (isButtonPressed(0) == 1){
 				MODE = MODE4;
-				setTimer(3, 25);
-				displayFirstLedCouple(LED_INIT);
-				displaySecondLedCouple(LED_INIT);
+				STATE = STATE1;
 			}
 			break;
 		case MODE4:
-			if(timer_flag[3] == 1){
-				toggleLeds(GREEN);
-				displaySEG7(greenDelay-1);
-				setTimer(3, 25);
+			if(timer_flag[2] == 1){
+				displayOnly_fsm(hour);
+				setTimer(2, 25);
 			}
 			if (isButtonPressed(1)==1){
-				redDelay +=1;
-				greenDelay +=1;
+				hour++;
+				if(hour >= 24)
+					hour = 0;
 
-				if(greenDelay >= 99) greenDelay = 1;
 			}
 			if (isButtonPressed(2)==1){
-				MODE = MODE1;
-				setValues();
+				hour--;
+				if(hour < 0)
+					hour = 23;
 			}
 			if (isButtonPressed(0) == 1){
-				MODE = MODE1;
 				setValues();
-				displayFirstLedCouple(LED_INIT);
-				displaySecondLedCouple(LED_INIT);
+				setTimer(0, 100);
+				setTimer(1, 25);
 			}
 			break;
 		default:

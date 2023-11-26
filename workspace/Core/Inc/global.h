@@ -14,21 +14,17 @@
 
 
 enum ModeState {MODE1 = 1, MODE2 = 2, MODE3 = 3, MODE4 = 4};
-enum AutoState {AUTO_INIT, RED_GREEN, RED_YELLOW, GREEN_RED, YELLOW_RED};
-enum LedState {LED_INIT, RED, GREEN, YELLOW};
+enum DisplayState {STATE1 = 1, STATE2 = 2, STATE3 = 3, STATE4 = 4};
 enum LedToggleState {TOGGLE_INIT, TOGGLE};
 enum IncreaseDelayState {INCREASE_INIT, INCREASE};
 
 
 extern enum ModeState MODE;
-extern enum AutoState autostate;
+extern enum DisplayState STATE;
 
-
-extern int redDelay;
-extern int greenDelay;
-extern int yellowDelay;
-
-
+extern int hour;
+extern int minute;
+extern int second;
 
 extern int countdownFirstCoupleLed;
 extern int countdownSecondCoupleLed;

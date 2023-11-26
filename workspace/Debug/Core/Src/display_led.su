@@ -1,4 +1,4 @@
-../Core/Src/display_led.c:10:6:displayFirstLedCouple	16	static
-../Core/Src/display_led.c:39:6:displaySecondLedCouple	16	static
-../Core/Src/display_led.c:66:6:toggleLeds	16	static
-../Core/Src/display_led.c:86:6:displaySEG7	16	static
+../Core/Src/display_led.c:9:6:displaySEG7	16	static
+../Core/Src/display_led.c:123:6:enable	16	static
+../Core/Src/display_led.c:159:6:display_fsm	8	static
+../Core/Src/display_led.c:186:6:displayOnly_fsm	16	static
