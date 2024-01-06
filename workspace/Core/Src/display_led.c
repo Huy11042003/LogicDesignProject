@@ -123,10 +123,10 @@ void displaySEG7(int num){
 void enable(int num){
 	switch(num){
 		case 0:
-			HAL_GPIO_WritePin ( EN1_GPIO_Port , EN1_Pin , 1 ) ;
-			HAL_GPIO_WritePin ( EN2_GPIO_Port , EN2_Pin , 1 ) ;
-			HAL_GPIO_WritePin ( EN3_GPIO_Port , EN3_Pin , 1 ) ;
-			HAL_GPIO_WritePin ( EN4_GPIO_Port , EN4_Pin , 1 ) ;
+			HAL_GPIO_WritePin ( EN1_GPIO_Port , EN1_Pin , 0 ) ;
+			HAL_GPIO_WritePin ( EN2_GPIO_Port , EN2_Pin , 0 ) ;
+			HAL_GPIO_WritePin ( EN3_GPIO_Port , EN3_Pin , 0 ) ;
+			HAL_GPIO_WritePin ( EN4_GPIO_Port , EN4_Pin , 0 ) ;
 			break;
 		case 1:
 			HAL_GPIO_WritePin ( EN1_GPIO_Port , EN1_Pin , 0 ) ;
