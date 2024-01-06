@@ -14,6 +14,7 @@ void auto_run(){
 			setTimer(2, 25);
 		}
 		if(timer_flag[0] == 1){
+			HAL_GPIO_TogglePin(GPIOA, LED_Pin);
 			if(second > 59){
 				minute++;
 				second = 0;
