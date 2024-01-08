@@ -232,7 +232,7 @@ static void MX_GPIO_Init(void)
                           |C1_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, F1_Pin|G1_Pin|LED9_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOB, F1_Pin|G1_Pin|GREEN2_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pins : BUTTON3_Pin BUTTON2_Pin */
   GPIO_InitStruct.Pin = BUTTON3_Pin|BUTTON2_Pin;
@@ -251,20 +251,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : GREEN2_Pin */
-  GPIO_InitStruct.Pin = GREEN2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(GREEN2_GPIO_Port, &GPIO_InitStruct);
-
   /*Configure GPIO pin : BUTTON1_Pin */
   GPIO_InitStruct.Pin = BUTTON1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(BUTTON1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : F1_Pin G1_Pin LED9_Pin */
-  GPIO_InitStruct.Pin = F1_Pin|G1_Pin|LED9_Pin;
+  /*Configure GPIO pins : F1_Pin G1_Pin GREEN2_Pin */
+  GPIO_InitStruct.Pin = F1_Pin|G1_Pin|GREEN2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
