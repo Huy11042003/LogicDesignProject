@@ -11,7 +11,7 @@ void auto_run(){
 		if (isButtonPressed(0) == 1 ){
 			STATE = STATE1;
 			MODE = MODE2;
-			setTimer(2, 25);
+			setTimer(2, 1);
 		}
 		if(timer_flag[0] == 1){
 			HAL_GPIO_TogglePin(GPIOA, LED_Pin);
@@ -30,7 +30,7 @@ void auto_run(){
 		}
 		if(timer_flag[1] == 1){
 			display_fsm();
-			setTimer(1, 25);
+			setTimer(1, 1);
 		}
 	}
 }

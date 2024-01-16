@@ -107,23 +107,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-//	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0); //A0
-//	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_1); //A1
-//	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4); //A2
-
-//	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, RESET);
-//	  displaySEG7_1(3);
-//	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); //LED1
-//	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8); //D7-D8
-//	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0); //A3
-//	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_0); //I2C
-//	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7); //D9-D10
-//	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_9); //LED2
-//	  HAL_Delay(1000);
-//	  auto_run();
-//	  manual_run();
-	  enable(0);
-	  displaySEG7(7);
+	  auto_run();
+	  manual_run();
   }
   /* USER CODE END 3 */
 }

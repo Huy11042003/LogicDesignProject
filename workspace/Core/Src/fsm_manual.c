@@ -12,7 +12,7 @@ void manual_run(){
 		case MODE2:
 			if(timer_flag[2] == 1){
 				displayOnly_fsm(second);
-				setTimer(2, 25);
+				setTimer(2, 1);
 			}
 			if (isButtonPressed(1)==1){
 				second++;
@@ -49,7 +49,7 @@ void manual_run(){
 		case MODE3:
 			if(timer_flag[2] == 1){
 				displayOnly_fsm(minute);
-				setTimer(2, 25);
+				setTimer(2, 1);
 			}
 			if (isButtonPressed(1)==1){
 				minute++;
@@ -77,7 +77,7 @@ void manual_run(){
 		case MODE4:
 			if(timer_flag[2] == 1){
 				displayOnly_fsm(hour);
-				setTimer(2, 25);
+				setTimer(2, 1);
 			}
 			if (isButtonPressed(1)==1){
 				hour++;
@@ -93,7 +93,7 @@ void manual_run(){
 			if (isButtonPressed(0) == 1){
 				setValues();
 				setTimer(0, 100);
-				setTimer(1, 25);
+				setTimer(1, 1);
 			}
 			break;
 		default:
